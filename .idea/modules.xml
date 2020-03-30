@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidPopupWindowDropdown.iml" filepath="$PROJECT_DIR$/AndroidPopupWindowDropdown.iml" group="AndroidPopupWindowDropdown" />
+      <module fileurl="file://$PROJECT_DIR$/app/AndroidPopupWindowDropdown-app.iml" filepath="$PROJECT_DIR$/app/AndroidPopupWindowDropdown-app.iml" group="AndroidPopupWindowDropdown/app" />
       <module fileurl="file://$PROJECT_DIR$/DropDownMenu.iml" filepath="$PROJECT_DIR$/DropDownMenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

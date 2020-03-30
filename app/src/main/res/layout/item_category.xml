@@ -8,14 +8,15 @@
     android:orientation="horizontal"
     android:padding="10dp">
 
-    <android.support.v7.widget.AppCompatImageView
-        android:layout_width="24dp" android:id="@+id/ivIcon"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         app:srcCompat="@drawable/ic_insert_emoticon_black_24dp" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
