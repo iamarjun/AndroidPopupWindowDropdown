@@ -1,6 +1,8 @@
 package com.globaltech.dropdownmenu
 
+import android.graphics.Color
 import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
@@ -29,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         menu.height = getPxFromDp(600)
         menu.width = WindowManager.LayoutParams.MATCH_PARENT
         menu.isOutsideTouchable = true
+        menu.elevation = 20f
+        menu.animationStyle = R.style.AnimationPopup
         menu.isFocusable = true
+        menu.setBackgroundDrawable(ColorDrawable(Color.WHITE))
         menu.inputMethodMode = PopupWindow.INPUT_METHOD_NEEDED
         menu.softInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
         menu.showAtLocation(tvPicker, Gravity.TOP or Gravity.START, locateView(tvPicker)?.left!!, locateView(tvPicker)?.bottom!!)

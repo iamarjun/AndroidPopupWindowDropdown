@@ -1,7 +1,10 @@
 package com.globaltech.dropdownmenu
 
 import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.widget.EditText
 import android.widget.PopupWindow
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -16,7 +19,7 @@ import kotlinx.android.synthetic.main.popup_category.view.*
  */
 class CategoryDropdownMenu(private val context: Context) : PopupWindow(context) {
     private var rvCategory: RecyclerView? = null
-    private var search: SearchView? = null
+    private var search: EditText? = null
     private var dropdownAdapter: CategoryDropdownAdapter? = null
     fun setCategorySelectedListener(categorySelectedListener: CategorySelectedListener?) {
         dropdownAdapter!!.setCategorySelectedListener(categorySelectedListener)
@@ -31,15 +34,17 @@ class CategoryDropdownMenu(private val context: Context) : PopupWindow(context) 
         dropdownAdapter = CategoryDropdownAdapter(generateCategoryList())
         rvCategory?.setAdapter(dropdownAdapter)
 
-        search?.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                dropdownAdapter?.filter?.filter(query)
-                return false
+        search?.addTextChangedListener(object : TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                dropdownAdapter?.filter?.filter(newText)
-                return false
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                dropdownAdapter?.filter?.filter(s)
             }
 
         })

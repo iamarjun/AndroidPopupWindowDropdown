@@ -1,6 +1,5 @@
 package com.globaltech.dropdownmenu
 
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -67,7 +66,7 @@ class CategoryDropdownAdapter(private val categories: List<Category>) : Recycler
             val filterResult = FilterResults()
             val filteredList = ArrayList<Category>()
 
-            if (TextUtils.isEmpty(constraint))
+            if (constraint == null || constraint.isEmpty())
                 filteredList.addAll(categories)
             else {
                 categories.forEach {
